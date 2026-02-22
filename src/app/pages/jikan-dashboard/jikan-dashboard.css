@@ -9,25 +9,10 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 18px;
+  padding: 18px 18px;
   border-radius: 16px;
-  background: linear-gradient(270deg, #000000, #727172, #565657, #5b5b5c);
-  background-size: 300% 300%;
-  border: 1px solid #000000;
-  animation: gradientMove 6s ease infinite;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.header:hover {
-  box-shadow: 0 8px 28px rgba(169, 126, 242, 0.3);
-  transform: translateY(-2px);
-  animation-duration: 2s;
-}
-
-@keyframes gradientMove {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background: #f4f4f4;
+  border: 1px solid #ddd;
 }
 
 .header h1 {
@@ -41,14 +26,17 @@
   font-size: 14px;
 }
 
+/* ===== TOOLBAR NEGRO Y VISIBLE ===== */
 .toolbar {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin: 16px 0 18px;
   align-items: center;
+
   padding: 12px;
   border-radius: 14px;
+
   background: #111;
   border: 1px solid #000;
 }
@@ -59,11 +47,13 @@
   align-items: center;
 }
 
+/* Inputs en negro */
 input {
   padding: 10px 12px;
   border: 1px solid #333;
   border-radius: 12px;
   min-width: 240px;
+
   background: #0b0b0b;
   color: #fff;
   outline: none;
@@ -73,14 +63,19 @@ input::placeholder {
   color: #bdbdbd;
 }
 
+/* Botones visibles */
 button {
   padding: 10px 14px;
   border: 1px solid #333;
   border-radius: 12px;
   cursor: pointer;
+
   background: #1c1c1c;
   color: #fff;
-  transition: transform 0.05s ease, background 0.2s ease;
+
+  transition:
+    transform 0.05s ease,
+    background 0.2s ease;
 }
 
 button:hover {
@@ -96,6 +91,7 @@ button:active {
   margin: 6px 0 0;
 }
 
+/* ===== GRID DE CARDS ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -104,21 +100,10 @@ button:active {
 }
 
 .card {
-  position: relative;
-  border: 1.5px solid var(--lavender-200);
-  border-radius: 20px;
+  border: 1px solid #eee;
+  border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(160deg, #fff 0%, var(--lavender-50) 100%);
-  box-shadow: var(--shadow-card);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow:
-    0 12px 35px rgba(143, 92, 232, 0.25),
-    0 4px 12px rgba(196, 168, 248, 0.3);
-  border-color: var(--lavender-300);
+  background: white;
 }
 
 .card img {
@@ -136,14 +121,12 @@ button:active {
   margin: 0;
   font-size: 15px;
   line-height: 1.25;
-  color: #fff;
 }
 
 .meta {
   font-size: 12px;
   opacity: 0.85;
-  margin: 8px 0;
-  color: #fff;
+  margin: 8px 0 8px;
 }
 
 .synopsis {
@@ -152,5 +135,4 @@ button:active {
   opacity: 0.9;
   max-height: 64px;
   overflow: hidden;
-  color: #fff;
 }
